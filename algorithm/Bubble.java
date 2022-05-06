@@ -1,16 +1,16 @@
 package algorithm;
 
-import java.util.LinkedList;
+import static utility.utility.*;
 
 public class Bubble {
     // Bubble Sort Algorithm
-    public static void BubbleSort(LinkedList<String> data){
+    public static void BubbleSort(String[] data){
         int outer, inner;
 
-        for(outer=data.size()-1; outer>0; outer--){
+        for(outer=data.length-1; outer>0; outer--){
             for(inner=0; inner<outer; inner++){
-                if(data.get(inner).compareTo(data.get(inner+1))>0)
-                    utility.utility.swap(data, inner, outer);
+                if(data[inner].compareTo(data[inner+1])>0)
+                    swap(data, inner, inner+1);
             }
         }
     }

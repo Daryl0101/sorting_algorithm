@@ -1,30 +1,50 @@
 package utility;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.LinkedList;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
+import java.io.FileWriter;
 
 public class utility {
-    // Import File
-    public static LinkedList<String> ImportFile(File file){
-        LinkedList<String> data = new LinkedList<>();
-        try{
-            Scanner fileReader = new Scanner(file);
-            while (fileReader.hasNextLine())
-                data.add(fileReader.nextLine());
-            fileReader.close();
-        }catch (FileNotFoundException e){
-            System.out.println("Error happened when importing file.");
-            e.printStackTrace();
-        }
+    // Utility function for importing file into array
+    public static String[] ImportFile(String path) throws IOException{
+        File file = new File(path);
+        ArrayList<String> data_list = new ArrayList<>();
+        Scanner fileReader = new Scanner(file);
+        //for(int i=0;i<12;i++)
+        while (fileReader.hasNextLine())
+            data_list.add(fileReader.nextLine());
+        fileReader.close();
+        String[] data = new String[data_list.size()];
+        data = data_list.toArray(data);
         return data;
     }
 
+    // Utility function for exporting array into file
+    public static void ExportFile(String path, String[] data){
+        try {
+            File file = new File(path);
+            FileWriter fileWriter = new FileWriter(path);
+            for(int i=0; i<data.length; i++)
+                fileWriter.write(data[i]+'\n');
+            fileWriter.close();
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+
     // Utility function for swapping
-    public static void swap(LinkedList<String> data, int i, int j){
-        String tmp = data.get(i);
-        data.set(i, data.get(j));
-        data.set(j, tmp);
+    public static void swap(String[] data, int i, int j){
+        String tmp = data[i];
+        data[i] = data[j];
+        data[j] = tmp;
+    }
+
+    // Utility function for printing array
+    public static void PrintArray(String[] word){
+        for (int i = 0; i < word.length; i++){
+            System.out.println(word[i]);
+        }
     }
 }
