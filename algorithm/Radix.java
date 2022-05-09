@@ -1,32 +1,31 @@
 package algorithm;
 
 import java.util.Arrays;
-import java.util.LinkedList;
 
 public class Radix {
     // Radix Sort Algorithm
-    public static void RadixSort(LinkedList<String> data){
+    public static void RadixSort(String[] word, char lower, char upper){
         int maxIndex = 0;
-        for(int i=0;i<data.size();i++){
-            if(data.get(i).length()-1 > maxIndex){
-                maxIndex = data.get(i).length()-1;
+        for(int i=0;i<word.length;i++){
+            if(word[i].length()-1 > maxIndex){
+                maxIndex = word[i].length()-1;
             }
         }
 
         for(int i=maxIndex;i>=0;i--){
-            countingSort(data,i,'a','z');
+            countingSort(word,i,lower,upper);
         }
     }
 
     // Counting Sort Algorithm
-    private static void countingSort(LinkedList<String> data,int index,char lower,char upper){
+    private static void countingSort(String[] word,int index,char lower,char upper){
         int[] countArray = new int[(upper-lower)+2];
-        String[] tempArray = new String[data.size()];
+        String[] tempArray = new String[word.length];
         Arrays.fill(countArray,0);
 
         //increase count for char at index
-        for(int i=0;i<data.size();i++){
-            int charIndex = (data.get(i).length()-1 < index) ? 0 : ((data.get(i).charAt(index) - lower)+1);
+        for(int i=0;i<word.length;i++){
+            int charIndex = (word[i].length()-1 < index) ? 0 : ((word[i].charAt(index) - lower)+1);
             countArray[charIndex]++;
         }
 
@@ -35,14 +34,14 @@ public class Radix {
             countArray[i] += countArray[i-1];
         }
 
-        for(int i=data.size()-1;i>=0;i--){
-            int charIndex = (data.get(i).length()-1 < index) ? 0 : (data.get(i).charAt(index) - lower)+1;
-            tempArray[countArray[charIndex]-1] = data.get(i);
+        for(int i=word.length-1;i>=0;i--){
+            int charIndex = (word[i].length()-1 < index) ? 0 : (word[i].charAt(index) - lower)+1;
+            tempArray[countArray[charIndex]-1] = word[i];
             countArray[charIndex]--;
         }
 
         for(int i=0;i<tempArray.length;i++){
-            data.set(i,tempArray[i]);
+            word[i] = tempArray[i];
         }
     }
 }

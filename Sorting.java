@@ -28,7 +28,7 @@ public class Sorting {
 
         // Radix Sort
         String[] radix_sorted = data.clone();
-        RadixSort(radix_sorted,'\'','z');
+        RadixSort(radix_sorted,'\'','™');
         PrintArray(radix_sorted);
         ExportFile("C:\\Users\\60134\\Downloads\\radix_sorted.txt", radix_sorted);
     }

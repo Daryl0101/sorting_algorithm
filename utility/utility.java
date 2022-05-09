@@ -12,7 +12,7 @@ public class utility {
         File file = new File(path);
         ArrayList<String> data_list = new ArrayList<>();
         Scanner fileReader = new Scanner(file);
-        //for(int i=0;i<12;i++)
+        //for(int i=0;i<140000;i++)
         while (fileReader.hasNextLine())
             data_list.add(fileReader.nextLine());
         fileReader.close();
