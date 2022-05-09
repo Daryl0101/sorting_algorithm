@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.FileWriter;
+import java.util.Random;
 
 public class utility {
     // Utility function for importing file into array
@@ -46,5 +47,10 @@ public class utility {
         for (int i = 0; i < word.length; i++){
             System.out.println(word[i]);
         }
+    }
+
+    public static int RandomGenerator(int upperBound){
+        Random rand = new Random();
+        return rand.nextInt(upperBound);
     }
 }

@@ -18,18 +18,17 @@ public class Sorting {
 
         // Bubble Sort
         String[] bubble_sorted = data.clone();
-        BubbleSort(bubble_sorted);
+        BubbleSort(bubble_sorted);*/
 
 
         // Quick Sort
         String[] quick_sorted = data.clone();
-        QuickSort(quick_sorted,0,quick_sorted.length-1);*/
+        QuickSort(quick_sorted,RandomGenerator(quick_sorted.length),quick_sorted.length-1);
+        ExportFile("C:\\Users\\60134\\Downloads\\radix_sorted.txt", quick_sorted);
 
 
         // Radix Sort
-        String[] radix_sorted = data.clone();
-        RadixSort(radix_sorted,'\'','™');
-        PrintArray(radix_sorted);
-        ExportFile("C:\\Users\\60134\\Downloads\\radix_sorted.txt", radix_sorted);
+        /*String[] radix_sorted = data.clone();
+        RadixSort(radix_sorted,'\'','™');*/
     }
 }
