@@ -1,9 +1,10 @@
 package algorithm;
 
 public class Insertion {
+    // Counter to count primitive operations of Insertion Sort
+    private static long insertionCounter = 0L;
     // Insertion Sort Algorithm
     public static long InsertionSort(String[] word){
-        long insertionCounter = 0L;
         String tmp;
         int outer, inner;
         /*

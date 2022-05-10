@@ -3,9 +3,10 @@ package algorithm;
 import static utility.utility.swap;
 
 public class Bubble {
+    // Counter to count primitive operations of Bubble Sort
+    private static long bubbleCounter = 0L;
     // Bubble Sort Algorithm
     public static long BubbleSort(String[] word){
-        long bubbleCounter = 0L;
         int outer, inner;
         /*
         * Method calling of word.length
@@ -37,11 +38,12 @@ public class Bubble {
                     swap(word, inner, inner+1);
                     /*
                     * Addition of inner+1
+                    * Method calling of swap()
                     * Assignment & Referencing of tmp=data[i]
                     * Referencing*2 & Assignment of data[i]=data[j]
                     * Referencing & Assignment of data[j]=tmp
                     * */
-                    bubbleCounter += 8;
+                    bubbleCounter += 9;
                 }
             }
         }
