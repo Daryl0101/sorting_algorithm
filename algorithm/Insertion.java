@@ -9,44 +9,45 @@ public class Insertion {
         int outer, inner;
         /*
         * Assignment of outer=1
+        * Comparison & Referencing of outer<word.length
         * */
-        insertionCounter++;
+        insertionCounter += 3;
 
         for(outer=1; outer<word.length; outer++){
             tmp = word[outer];
             /*
-            * Comparison & Referencing of outer<word.length
-            * Addition & Assignment of outer++
-            * Assignment & Referencing of tmp=word[outer]
-            * Assignment of inner=outer
-            * */
-            insertionCounter += 7;
+             * Assignment & Referencing of tmp=word[outer]
+             * Assignment of inner=outer
+             * Comparison of inner>0
+             * */
+            insertionCounter += 4;
 
             for(inner=outer; inner>0; inner--){
                 /*
-                * Comparison of inner>0
-                * Subtraction & Assignment of inner--
                 * Method calling of tmp.compareTo()
                 * Subtraction & Referencing of word[inner-1]
                 * Comparison of tmp.compareTo(word[inner-1])>=0
                 * */
-                insertionCounter += 7;
+                insertionCounter += 4;
 
                 if(tmp.compareTo(word[inner-1])>=0){
                     break;
                 }
                 word[inner] = word[inner-1];
                 /*
-                 * Referencing of word[inner]
-                 * Subtraction & Referencing of word[inner-1]
+                 * Referencing*2 & Subtraction & Assignment of word[inner]=word[inner-1]
+                 * Subtraction & Assignment of inner--
+                 * Comparison of inner>0
                  * */
-                insertionCounter += 3;
+                insertionCounter += 7;
             }
             word[inner] = tmp;
             /*
             * Referencing & Assignment of word[inner]=tmp
+            * Addition & Assignment of outer++
+            * Comparison & Referencing of outer<word.length
             * */
-            insertionCounter += 2;
+            insertionCounter += 6;
         }
         return insertionCounter;
     }

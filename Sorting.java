@@ -22,8 +22,8 @@ public class Sorting {
 
 
         // Quick Sort
-        /*String[] quick_sorted = data.clone();
-        QuickSort(quick_sorted,0,quick_sorted.length-1);*/
+        String[] quick_sorted = data.clone();
+        System.out.println(QuickSort(quick_sorted,0,quick_sorted.length-1));
 
 
         // Radix Sort

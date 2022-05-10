@@ -42,17 +42,16 @@ public class Quick {
         * Assignment & Referencing of pivot_word=word[right]
         * Subtraction & Assignment of i=left-1
         * Assignment of j=left
+        * Comparison of j<right
         * */
-        quickCounter += 6;
+        quickCounter += 7;
 
         for(int j=left;j<right;j++){
 
             /*
-            * Comparison of j<right
-            * Addition & Assignment of j++
             * Referencing & Method calling & Comparison of word[j].compareTo(pivot_word)<0
             * */
-            quickCounter += 6;
+            quickCounter += 3;
 
             if(word[j].compareTo(pivot_word)<0){
                 i++;
@@ -67,16 +66,22 @@ public class Quick {
                 * */
                 quickCounter += 10;
             }
+
+            /*
+            * Addition & Assignment of j++
+            * Comparison of j<right
+            * */
+            quickCounter += 3;
         }
 
         /*
-         * Addition of i+1
-         * Method calling of swap()
-         * Assignment & Referencing of tmp=data[i]
-         * Referencing*2 & Assignment of data[i]=data[j]
-         * Referencing & Assignment of data[j]=tmp
-         * Addition & Return of i+1
-         * */
+        * Addition of i+1
+        * Method calling of swap()
+        * Assignment & Referencing of tmp=data[i]
+        * Referencing*2 & Assignment of data[i]=data[j]
+        * Referencing & Assignment of data[j]=tmp
+        * Addition & Return of i+1
+        * */
         quickCounter += 11;
 
         swap(word,i+1,right);

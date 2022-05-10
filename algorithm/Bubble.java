@@ -9,30 +9,23 @@ public class Bubble {
     public static long BubbleSort(String[] word){
         int outer, inner;
         /*
-        * Method calling of word.length
-        * Subtraction of word.length-1
-        * Assignment of outer=word.length-1
+        * Assignment & Method calling & Subtraction of outer=word.length-1
+        * Comparison of outer>0
         * */
-        bubbleCounter += 3;
+        bubbleCounter += 4;
 
         for(outer=word.length-1; outer>0; outer--){
             /*
-            * Comparison of outer>0
-            * Subtraction & Assignment of outer--
             * Assignment of inner=0
+            * Comparison of inner<outer
             * */
-            bubbleCounter += 4;
+            bubbleCounter += 2;
 
             for(inner=0; inner<outer; inner++){
                 /*
-                * Comparison of inner<outer
-                * Addition & Assignment of inner++
-                * Referencing of word[inner]
-                * Method calling of word[inner].compareTo()
-                * Referencing & Addition of word[inner+1]
-                * Comparison of word[inner].compareTo(word[inner+1])>0
+                * Referencing*2 & Addition & Method calling & Comparison of word[inner].compareTo(word[inner+1])>0
                 * */
-                bubbleCounter += 8;
+                bubbleCounter += 5;
 
                 if(word[inner].compareTo(word[inner+1])>0){
                     swap(word, inner, inner+1);
@@ -45,7 +38,18 @@ public class Bubble {
                     * */
                     bubbleCounter += 9;
                 }
+                /*
+                * Addition & Assignment of inner++
+                * Comparison of inner<outer
+                * */
+                bubbleCounter += 3;
             }
+
+            /*
+            * Subtraction & Assignment of outer--
+            * Comparison of outer>0
+            * */
+            bubbleCounter += 3;
         }
         return bubbleCounter;
     }
