@@ -14,22 +14,23 @@ public class Sorting {
 
         // Insertion Sort
         /*String[] insertion_sorted = data.clone();
-        long val = InsertionSort(insertion_sorted);*/
+        long val1 = InsertionSort(insertion_sorted);*/
 
         // Bubble Sort
         /*String[] bubble_sorted = data.clone();
-        long val = BubbleSort(bubble_sorted);*/
+        long val2 = BubbleSort(bubble_sorted);*/
 
 
         // Quick Sort
-        String[] quick_sorted = data.clone();
-        System.out.println(QuickSort(quick_sorted,0,quick_sorted.length-1));
+        /*String[] quick_sorted = data.clone();
+        long val3 = QuickSort(quick_sorted,0,quick_sorted.length-1);*/
 
 
         // Radix Sort
-        /*String[] radix_sorted = data.clone();
-        RadixSort(radix_sorted,'\'','™');*/
+        String[] radix_sorted = data.clone();
+        long val4 = RadixSort(radix_sorted,'\'','™');
 
-        ExportFile("C:\\Users\\60134\\Downloads\\quick_sorted.txt", quick_sorted);
+        System.out.println(val4);
+        ExportFile("C:\\Users\\60134\\Downloads\\radix_sorted.txt", radix_sorted);
     }
 }
