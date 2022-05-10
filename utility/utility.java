@@ -58,4 +58,14 @@ public class utility {
             word[i] = newString[i];
         }
     }
+
+    // Utility function to slice an array
+    public static String[] SliceArray(String[] word, int start, int end){
+        end = end>word.length-1 ? word.length-1 : end;
+        String[] sliced = new String[end-start+1];
+        for(int i=0;i<sliced.length;i++){
+            sliced[i] = word[start+i];
+        }
+        return sliced;
+    }
 }

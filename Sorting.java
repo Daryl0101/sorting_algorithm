@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.util.LinkedList;
 
 import static utility.utility.*;
 import static algorithm.Insertion.*;
@@ -25,12 +26,21 @@ public class Sorting {
         /*String[] quick_sorted = data.clone();
         long val3 = QuickSort(quick_sorted,0,quick_sorted.length-1);*/
 
-
         // Radix Sort
-        String[] radix_sorted = data.clone();
-        long val4 = RadixSort(radix_sorted,'\'','™');
+        /*String[] radix_sorted = data.clone();
+        long val4 = RadixSort(radix_sorted,'\'','™');*/
 
-        System.out.println(val4);
-        ExportFile("C:\\Users\\60134\\Downloads\\radix_sorted.txt", radix_sorted);
+        LinkedList<String> y = new LinkedList<>();
+        for(int i=0;i<data.length;i+=2000){
+            i = data.length-1-i<2000 ? data.length-1 : i;
+            String[] sliced = SliceArray(data,0,i);
+            //long var = InsertionSort(sliced);
+            //long var = BubbleSort(sliced);
+            //long var = QuickSort(sliced,0,sliced.length-1);
+            long var = RadixSort(sliced,'\'','™');
+            y.add(Long.toString(var));
+            System.out.println(i+1);
+        }
+        ExportFile("C:\\Users\\60134\\Downloads\\sorted_y.txt", y.toArray(new String[y.size()]));
     }
 }
