@@ -72,20 +72,20 @@ public class Sorting {
         switch (cs) {
             case 'a':
             case 'A':
-                path = "src/txtFiles/bestList.txt";
+                path = "sorting_algorithm/txtFiles/bestList.txt";
                 break;
             case 'b':
             case 'B':
-                path = "src/txtFiles/avgList.txt";
+                path = "sorting_algorithm/txtFiles/avgList.txt";
                 break;
             case 'c':
             case 'C':
-                path = "src/txtFiles/worstList.txt";
+                path = "sorting_algorithm/txtFiles/worstList.txt";
                 break;
         }
         // Import data from .txt file
         data = ImportFile(path);
-        if(path=="src/txtFiles/avgList.txt"){
+        if(path=="sorting_algorithm/txtFiles/avgList.txt"){
             // Shuffle array if average case is chosen
             data = ShuffleList(data);
         }
@@ -120,7 +120,7 @@ public class Sorting {
             System.out.println();
             System.out.println("Total Number of Primitive Operations: " + val);
             ExportFile("sorting_algorithm/sortedFiles/sorted.txt", data);
-            System.out.println("Graph data exported to txt file at: sorting_algorithm/sortedFiles/sorted.txt");
+            System.out.println("Sorted word list exported to txt file at: sorting_algorithm/sortedFiles/sorted.txt");
         }
         else if(gdt=='y' || gdt=='Y'){
             LinkedList<String> y = new LinkedList<>();
