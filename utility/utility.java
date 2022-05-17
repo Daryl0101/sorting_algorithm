@@ -2,8 +2,7 @@ package utility;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 import java.io.FileWriter;
 
 public class utility {
@@ -67,5 +66,11 @@ public class utility {
             sliced[i] = word[start+i];
         }
         return sliced;
+    }
+
+    public static String[] ShuffleList(String[] data){
+        List<String> tempList = Arrays.asList(data);
+        Collections.shuffle(tempList);
+        return tempList.toArray(data);
     }
 }
