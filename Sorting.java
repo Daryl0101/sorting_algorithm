@@ -72,20 +72,20 @@ public class Sorting {
         switch (cs) {
             case 'a':
             case 'A':
-                path = "sorting_algorithm/txtFiles/bestList.txt";
+                path = "txtFiles/bestList.txt";
                 break;
             case 'b':
             case 'B':
-                path = "sorting_algorithm/txtFiles/avgList.txt";
+                path = "txtFiles/avgList.txt";
                 break;
             case 'c':
             case 'C':
-                path = "sorting_algorithm/txtFiles/worstList.txt";
+                path = "txtFiles/worstList.txt";
                 break;
         }
         // Import data from .txt file
         data = ImportFile(path);
-        if(path=="sorting_algorithm/txtFiles/avgList.txt"){
+        if(path=="txtFiles/avgList.txt"){
             // Shuffle array if average case is chosen
             data = ShuffleList(data);
         }
@@ -119,8 +119,8 @@ public class Sorting {
             PrintArray(data);
             System.out.println();
             System.out.println("Total Number of Primitive Operations: " + val);
-            ExportFile("sorting_algorithm/sortedFiles/sorted.txt", data);
-            System.out.println("Sorted word list exported to txt file at: sorting_algorithm/sortedFiles/sorted.txt");
+            ExportFile("sortedFiles/sorted.txt", data);
+            System.out.println("Sorted word list exported to txt file at: sortedFiles/sorted.txt");
         }
         else if(gdt=='y' || gdt=='Y'){
             LinkedList<String> y = new LinkedList<>();
@@ -128,6 +128,7 @@ public class Sorting {
             for(int i=0;i<data.length;i+=2000){
                 i = data.length-1-i<2000 ? data.length-1 : i;
                 String[] sliced = SliceArray(data,0,i);
+                System.out.println("Number of words: " + (i+1));
                 val = 0L;
                 switch (algo){
                     case ('a'):
@@ -152,10 +153,9 @@ public class Sorting {
                         break;
                 }
                 y.add(Long.toString(val));
-                System.out.println(i+1);
             }
-            ExportFile("sorting_algorithm/sortedFiles/y_data.txt", y.toArray(new String[y.size()]));
-            System.out.println("Graph data exported to txt file at: sorting_algorithm/sortedFiles/y_data.txt");
+            ExportFile("sortedFiles/y_data.txt", y.toArray(new String[y.size()]));
+            System.out.println("Graph data exported to txt file at: sortedFiles/y_data.txt");
         }
 
     }
