@@ -65,6 +65,8 @@ public class Sorting {
             gdt = myObj.next().charAt(0);
         }
 
+        myObj.close();
+
         String[] data;
         String path = "";
 

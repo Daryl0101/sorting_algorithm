@@ -23,7 +23,6 @@ public class utility {
     // Utility function for exporting array into file
     public static void ExportFile(String path, String[] data){
         try {
-            File file = new File(path);
             FileWriter fileWriter = new FileWriter(path);
             for(int i=0; i<data.length; i++)
                 fileWriter.write(data[i]+'\n');
